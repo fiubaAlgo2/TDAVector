@@ -1,6 +1,6 @@
 # TDAVector
 
-## Initial implementation
+## Initial implementation + operators overriding
 
 Inspired in [`std::vector`](https://en.cppreference.com/w/cpp/container/vector) from the STL C++ library.
 
