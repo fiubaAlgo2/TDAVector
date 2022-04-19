@@ -57,7 +57,7 @@ void Vector::resize(const int count) {
     data_ = aux;
 }
 
-void Vector::push_back(const Data element) {
+void Vector::pushBack(const Data element) {
     if(size_ == capacity_) {
         resize(size_ + 1);
     }

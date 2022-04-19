@@ -50,7 +50,7 @@ public:
     // pre: `element` is a valid Data
     // post: places the element after the last element of the vector. 
     //       Makes a resize if necessary
-    void push_back(const Data element);
+    void pushBack(const Data element);
 
     // Remove element from position
     // pre: 0 <= position <= size

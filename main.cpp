@@ -8,7 +8,7 @@ int main() {
     Vector vectorA;
 
     for (int i = 0; i < 10 ; ++i) {
-        vectorA.push_back(i);
+        vectorA.pushBack(i);
         vectorA.print();
         cout << "size: " << vectorA.size() 
             << ", capacity: " << vectorA.capacity() << endl << endl;
