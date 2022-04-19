@@ -1,6 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+#include <sstream>
 typedef int Data;
 
 class Vector {
@@ -58,19 +59,15 @@ public:
     //      and decreases the size in a factor of 1
     void remove(const int position);
 
-    // Print the elements of the vector
-    // pre: -
-    // post: Iterates through the vector and prints its element on screen
-    void print() const;
-
-    // Get element by index
-    // pre: 0 <= i < size
-    // pos: return the data that is in the `i` position
-    Data get(const int i) const;
-
     // Destructor
     // post: If the vector is not empty, desalocates the memory used
     ~Vector();
+
+    // Operators
+    
+    Data operator[](const int position) const;
+    bool operator==(const Vector &other) const;
+    Vector operator+(const Vector &other) const;
 
     
 private:
@@ -82,6 +79,9 @@ private:
     int computeCapacity(const int size) const;
     void copyDataTo(Data* otherData, int sizeOfData) const;
     void deleteData();
+    bool sameElementsAs(const Vector &other) const;
 };
+
+std::ostream& operator<<(std::ostream &out, const Vector &vector);
 
 #endif // VECTOR_H
