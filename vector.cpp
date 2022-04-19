@@ -75,21 +75,6 @@ void Vector::remove(const int position) {
     size_--;
 }
 
-void Vector::print() const {
-    std::cout << "[";
-    for (int i = 0; i < size_; i++) {
-        std::cout << data_[i];
-        if(i != size_ - 1) {
-            std::cout << ", ";
-        }
-    }
-    std::cout << "]" << std::endl;
-}
-
-Data Vector::get(int i) const{
-    return data_[i];
-}
-
 int Vector::computeCapacity(int size) const {
     return (int) pow(Vector::kGrowFactor, 
                     ceil(log(size)/log(Vector::kGrowFactor)));
@@ -116,7 +101,40 @@ void Vector::deleteData() {
     }
 }
 
+bool Vector::sameElementsAs(const Vector &other) const {
+    bool result = true;
+    for (int i = 0; i < size(); ++i) {
+        if ((*this)[i] != other[i]) {
+            result = false;
+        }
+    }
+    return result;
+}
 
 Vector::~Vector() {
     deleteData();
+}
+
+// Operators
+
+Data Vector::operator[](const int position) const {
+    return data_[position];
+}
+
+bool Vector::operator==(const Vector &other) const {
+    return size() == other.size() &&
+           capacity() == other.capacity() &&
+           sameElementsAs(other);
+}
+
+std::ostream& operator<<(std::ostream &out, const Vector &vector) {
+    out << "[";
+    for (int i = 0; i < vector.size(); i++) {
+        out << vector[i];
+        if(i != vector.size() - 1) {
+            out << ", ";
+        }
+    }
+    out << "]";
+    return out;
 }

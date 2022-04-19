@@ -9,18 +9,27 @@ int main() {
 
     for (int i = 0; i < 10 ; ++i) {
         vectorA.push_back(i);
-        vectorA.print();
+        cout << vectorA << endl;
         cout << "size: " << vectorA.size() 
             << ", capacity: " << vectorA.capacity() << endl << endl;
     }
 
     cout << "vectorA after resizing of 5: ";
     vectorA.resize(5);
-    vectorA.print();
+    cout << vectorA << endl;
     cout << "size: " << vectorA.size() 
             << ", capacity: " << vectorA.capacity() << endl << endl;
 
-    cout << "vectorA after removing element in 3rd position: ";
-    vectorA.remove(3);
-    vectorA.print();
+    Vector vectorB(vectorA);
+
+    cout << "vectorB is equal to vectorA? " << (vectorA == vectorB) << endl;
+
+    cout << "vectorB after removing element in 3rd position: ";
+    vectorB.remove(3);
+    cout << vectorB << endl;
+
+    cout << "vectorB is equal to vectorA? " << (vectorA == vectorB) << endl;
+
+    cout << "vectorB third element: " << vectorB[3] << endl;
+
 }
