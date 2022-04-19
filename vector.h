@@ -31,12 +31,6 @@ public:
     // post: returns the number of elements in the vector
     int size() const;
 
-    // Get the capactity
-    // pre: -
-    // post: returns the size of the storage space currently 
-    //       allocated to the vector expressed as number of elements.
-    int capacity() const;
-
     // Tells if the vector is empty
     // pre: -
     // post: returns true if the vector is empty, or false otherwise
@@ -51,7 +45,7 @@ public:
     // pre: `element` is a valid Data
     // post: places the element after the last element of the vector. 
     //       Makes a resize if necessary
-    void push_back(const Data element);
+    void pushBack(const Data element);
 
     // Remove element from position
     // pre: 0 <= position <= size
@@ -76,7 +70,6 @@ private:
     int capacity_;
     Data* data_;
 
-    int computeCapacity(const int size) const;
     void copyDataTo(Data* otherData, int sizeOfData) const;
     void deleteData();
     bool sameElementsAs(const Vector &other) const;
