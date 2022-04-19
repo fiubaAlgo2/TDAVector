@@ -20,7 +20,8 @@ int main() {
     cout << "size: " << vectorA.size() 
             << ", capacity: " << vectorA.capacity() << endl << endl;
 
-    cout << "vectorA after removing element in 3rd position: ";
+    Vector vectorB(vectorA);
+    cout << "vectorB after removing element in 3rd position: ";
     vectorA.remove(3);
     vectorA.print();
 }
